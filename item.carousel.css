@@ -1,0 +1,75 @@
+.item-carousel {
+	position: relative;
+}
+.item-carousel:after {
+	content: "";
+	display: table;
+	clear: both
+}
+.item-carousel img {
+	display: none;
+	top: 0;
+	left: 0
+}
+.item-carousel img:first-child {
+	display: block
+}
+.item-carousel .tmb-wrap {
+	position: absolute;
+	z-index: 2;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	width: 100%;
+	height: 100%
+}
+.item-carousel .tmb-wrap .tmb-wrap-table {
+	display: flex;
+	justify-content: space-evenly;
+	height: 100%;
+	width: 100%
+}
+.item-carousel .tmb-wrap .tmb-wrap-table div {
+	position: relative;
+	width: 100%;
+	transition: all .3s ease
+}
+.item-carousel .tmb-wrap .tmb-wrap-table div::after {
+	content: "";
+	background-color: #ccc;
+	left: 1px;
+	right: 1px;
+	top: 0;
+	position: absolute;
+	transition: background-color .3s ease-out;
+	height: 2px
+}.item-carousel .tmb-wrap .tmb-wrap-table div.active::after {
+	background-color: #004f9c;
+}
+.item-carousel .tmb-wrap .tmb-wrap-table div:first-child:last-child {
+	border-color: transparent
+}
+.item-carousel .image-wrap {
+	height: 100%
+}
+.item-carousel .image-nav-wrap {
+	position: absolute;
+	bottom: 0;
+	display: flex;
+	flex-wrap: nowrap;
+	justify-content: center;
+	width: 100%;
+	z-index: 3
+}
+.item-carousel .image-nav-wrap div {
+	background-color: #ccc;
+	border-radius: 50%;
+	width: 8px;
+	height: 8px;
+	margin: 3px;
+	transition: background-color .3s ease-out
+}
+.item-carousel .image-nav-wrap div.active {
+	background-color: #004f9c
+}
